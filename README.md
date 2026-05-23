@@ -1,29 +1,51 @@
-# Sortie
+<p align="center">
+  <img src="./assets/readme-hero.svg" alt="Sortie - AI agent mission control for iPhone and Mac" width="100%" />
+</p>
 
-**AI agent mission control for iPhone and Mac.**
+<p align="center">
+  <a href="https://testflight.apple.com/join/1jB6HJ9m"><img alt="TestFlight beta" src="https://img.shields.io/badge/TestFlight-beta_open-ff7a30?style=for-the-badge&labelColor=11110f"></a>
+  <a href="https://github.com/thebasedcapital/homebrew-sortie"><img alt="Homebrew install" src="https://img.shields.io/badge/Homebrew-brew_install_sortie-f4efe5?style=for-the-badge&labelColor=11110f&color=f4efe5"></a>
+  <a href="https://sortie.fly.dev"><img alt="Landing page" src="https://img.shields.io/badge/Web-sortie.fly.dev-85b8ff?style=for-the-badge&labelColor=11110f"></a>
+</p>
 
-Run Claude, Codex, Gemini, Hermes, Pi, Amp, Claw, Kilo, SoulForge, and Droid from one iOS control surface while your Mac runs the real agent sessions locally.
+<h1 align="center">Sortie</h1>
 
-| Beta | Install | Support |
-| --- | --- | --- |
-| [Join TestFlight](https://testflight.apple.com/join/1jB6HJ9m) | `brew tap thebasedcapital/sortie && brew install sortie` | [Open an issue](https://github.com/thebasedcapital/sortie/issues/new/choose) |
+<p align="center">
+  <strong>Command every AI agent from your iPhone. Your Mac runs the work locally.</strong>
+  <br />
+  Claude, Codex, Gemini, Hermes, Pi, Amp, Claw, Kilo, SoulForge, and Droid in one control surface.
+</p>
+
+<p align="center">
+  <a href="https://testflight.apple.com/join/1jB6HJ9m"><strong>Join TestFlight</strong></a>
+  &nbsp;/&nbsp;
+  <a href="#quick-start"><strong>Install CLI</strong></a>
+  &nbsp;/&nbsp;
+  <a href="https://github.com/thebasedcapital/sortie/issues/new/choose"><strong>Report a bug</strong></a>
+</p>
 
 ---
 
-## What This Repo Is
+## Public Beta Hub
 
-This is the public pre-launch home and issue tracker for Sortie.
+This repository is Sortie's public pre-launch home: issues, beta support, install notes, and release-facing documentation. The app and CLI source are private during the TestFlight beta, with source opening planned after v1.0.
 
-The app and CLI source are private during beta, but this repo is open so TestFlight users can:
-
-- report bugs with enough detail to reproduce them
-- request agent integrations and workflow improvements
-- ask install, pairing, and account questions
-- track public beta notes before the v1.0 source release
+<table>
+  <tr>
+    <td><strong>iPhone app</strong></td>
+    <td>Launch, inspect, and resume agent sessions from iOS.</td>
+  </tr>
+  <tr>
+    <td><strong>Mac CLI</strong></td>
+    <td>Runs the real local agent process on your linked machine.</td>
+  </tr>
+  <tr>
+    <td><strong>Encrypted relay</strong></td>
+    <td>Routes messages while device-held keys protect content.</td>
+  </tr>
+</table>
 
 ## Quick Start
-
-### 1. Install the Mac CLI
 
 ```sh
 brew tap thebasedcapital/sortie
@@ -31,36 +53,35 @@ brew install sortie
 sortie
 ```
 
-Keep the terminal window open. The CLI will show a QR code for pairing.
-
-### 2. Install the iOS Beta
-
-Open the [Sortie TestFlight](https://testflight.apple.com/join/1jB6HJ9m) on an iPhone running iOS 17 or newer.
-
-### 3. Pair Your Devices
-
-In the Sortie app, create your account, then open:
+Then install the [iOS TestFlight beta](https://testflight.apple.com/join/1jB6HJ9m), create your account, and scan the QR code shown by your Mac:
 
 ```text
 Settings -> Account -> Link New Device
 ```
 
-Scan the QR code from your Mac terminal. Once linked, the iPhone becomes the control surface and your Mac runs the agent processes.
+## Supported Agents
 
-## How Sortie Works
+| Beta | Experimental |
+| --- | --- |
+| Claude | Pi |
+| Codex | Claw |
+| Gemini | Kilo |
+| Amp | SoulForge |
+| Hermes |  |
+| Droid |  |
+
+## Architecture
 
 ```text
-┌──────────────────────┐      encrypted relay      ┌──────────────────────┐
-│ iPhone Sortie app    │  <──────────────────────> │ Mac sortie daemon    │
-│ command surface      │       libsodium keys      │ runs local agents    │
-└──────────────────────┘                            └──────────┬───────────┘
-                                                               │
-                                                               ▼
-                                                  claude / codex / gemini
-                                                  amp / hermes / droid / ...
+iPhone Sortie app      < encrypted relay >      Mac sortie daemon
+command surface          libsodium keys         local agent runtime
+                                                    |
+                                                    v
+                                      claude / codex / gemini / amp
+                                      hermes / droid / pi / claw / ...
 ```
 
-The relay server handles auth and routing. Message content stays end-to-end encrypted; keys live on your devices.
+The relay handles auth and routing. Message content stays end-to-end encrypted; keys live on your devices.
 
 ## Requirements
 
@@ -69,40 +90,17 @@ The relay server handles auth and routing. Message content stays end-to-end encr
 - iPhone with iOS 17 or newer
 - At least one supported agent CLI installed, such as `claude`, `codex`, or `gemini`
 
-## Supported Agent Roster
+## Report A Bug
 
-| Agent | Status | Notes |
-| --- | --- | --- |
-| Claude | Beta | Anthropic CLI sessions |
-| Codex | Beta | OpenAI coding sessions |
-| Gemini | Beta | Google CLI sessions |
-| Amp | Beta | Sourcegraph Amp workflows |
-| Hermes | Beta | Hermes agent runs |
-| Droid | Beta | Factory Droid sessions |
-| Pi | Experimental | Companion reasoning workflows |
-| Claw | Experimental | Open-source agent workflows |
-| Kilo | Experimental | Community integration |
-| SoulForge | Experimental | Creative and exploratory sessions |
-
-## Reporting A Bug
-
-Before opening an issue, run:
+Run this first:
 
 ```sh
 sortie doctor
 ```
 
-Then include:
+Then [open a bug report](https://github.com/thebasedcapital/sortie/issues/new/choose) with what you did, what you expected, what happened, and the `sortie doctor` output. Screenshots or recordings help for visual issues.
 
-- what you were trying to do
-- what you expected to happen
-- what actually happened
-- the `sortie doctor` output
-- screenshots or screen recordings when the bug is visual
-
-Open a bug report here: [github.com/thebasedcapital/sortie/issues/new/choose](https://github.com/thebasedcapital/sortie/issues/new/choose)
-
-## Useful Links
+## Links
 
 | Resource | Link |
 | --- | --- |
