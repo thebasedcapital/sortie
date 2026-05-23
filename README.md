@@ -3,9 +3,9 @@
 </p>
 
 <p align="center">
-  <a href="https://testflight.apple.com/join/1jB6HJ9m"><img alt="TestFlight beta" src="https://img.shields.io/badge/TestFlight-beta_open-ff7a30?style=for-the-badge&labelColor=11110f"></a>
-  <a href="https://github.com/thebasedcapital/homebrew-sortie"><img alt="Homebrew install" src="https://img.shields.io/badge/Homebrew-brew_install_sortie-f4efe5?style=for-the-badge&labelColor=11110f&color=f4efe5"></a>
-  <a href="https://sortie.fly.dev"><img alt="Landing page" src="https://img.shields.io/badge/Web-sortie.fly.dev-85b8ff?style=for-the-badge&labelColor=11110f"></a>
+  <a href="https://testflight.apple.com/join/1jB6HJ9m"><img alt="Join TestFlight" src="./assets/pill-testflight.svg" height="42"></a>
+  <a href="#quick-start"><img alt="brew install sortie" src="./assets/pill-install.svg" height="42"></a>
+  <a href="https://github.com/thebasedcapital/sortie/issues/new/choose"><img alt="Report a bug" src="./assets/pill-support.svg" height="42"></a>
 </p>
 
 <h1 align="center">Sortie</h1>
@@ -17,18 +17,20 @@
 </p>
 
 <p align="center">
-  <a href="https://testflight.apple.com/join/1jB6HJ9m"><strong>Join TestFlight</strong></a>
+  <a href="https://testflight.apple.com/join/1jB6HJ9m"><strong>TestFlight</strong></a>
   &nbsp;/&nbsp;
-  <a href="#quick-start"><strong>Install CLI</strong></a>
+  <a href="#quick-start"><strong>Homebrew install</strong></a>
   &nbsp;/&nbsp;
-  <a href="https://github.com/thebasedcapital/sortie/issues/new/choose"><strong>Report a bug</strong></a>
+  <a href="https://sortie.fly.dev"><strong>Landing page</strong></a>
+  &nbsp;/&nbsp;
+  <a href="https://github.com/thebasedcapital/sortie/issues/new/choose"><strong>Support</strong></a>
 </p>
 
 ---
 
 ## Public Beta Hub
 
-This repository is Sortie's public pre-launch home: issues, beta support, install notes, and release-facing documentation. The app and CLI source are private during the TestFlight beta, with source opening planned after v1.0.
+This repository is Sortie's public pre-launch home: beta support, install notes, issue intake, and release-facing documentation. The app and CLI source are private during TestFlight, with source opening planned after v1.0.
 
 <table>
   <tr>
@@ -61,14 +63,10 @@ Settings -> Account -> Link New Device
 
 ## Supported Agents
 
-| Beta | Experimental |
+| Beta-ready | Experimental |
 | --- | --- |
-| Claude | Pi |
-| Codex | Claw |
-| Gemini | Kilo |
-| Amp | SoulForge |
-| Hermes |  |
-| Droid |  |
+| Claude, Codex, Gemini | Pi, Claw, Kilo |
+| Amp, Hermes, Droid | SoulForge |
 
 ## Architecture
 
