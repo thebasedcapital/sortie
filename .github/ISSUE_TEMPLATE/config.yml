@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Brew tap (CLI install issues)
+    url: https://github.com/thebasedcapital/homebrew-sortie/issues
+    about: Problems installing via `brew tap thebasedcapital/sortie` should go here.
+  - name: Email
+    url: mailto:hello@sortie.fly.dev
+    about: Private / security reports.

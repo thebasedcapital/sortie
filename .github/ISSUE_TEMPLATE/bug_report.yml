@@ -1,0 +1,42 @@
+name: Bug report
+description: Something is broken or doesn't work like the docs say.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, what actually happened?
+      placeholder: |
+        I ran `sortie` and instead of a QR code I got...
+    validations:
+      required: true
+  - type: input
+    id: sortie-version
+    attributes:
+      label: Sortie CLI version
+      description: Output of `sortie --version`
+      placeholder: "0.14.0"
+  - type: input
+    id: ios-version
+    attributes:
+      label: iOS version
+      placeholder: "iOS 17.5"
+  - type: input
+    id: macos-version
+    attributes:
+      label: macOS version
+      placeholder: "macOS 15.0"
+  - type: textarea
+    id: doctor
+    attributes:
+      label: sortie doctor output
+      description: Paste the output of `sortie doctor` (redact anything sensitive)
+      render: shell
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Any terminal output, error messages, or stack traces
+      render: shell
