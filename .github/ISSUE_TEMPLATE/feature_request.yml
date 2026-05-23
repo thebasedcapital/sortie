@@ -1,20 +1,44 @@
 name: Feature request
-description: Suggest a feature or improvement.
-title: "[Feature] "
-labels: ["enhancement"]
+description: Suggest an integration, workflow, or product improvement.
+title: "[Feature]: "
+labels: ["enhancement", "beta"]
 body:
   - type: textarea
     id: problem
     attributes:
-      label: What problem does this solve?
-      description: What were you trying to do when you wished this feature existed?
+      label: What problem would this solve?
+      placeholder: "Describe the workflow friction or missing capability."
     validations:
       required: true
   - type: textarea
-    id: solution
+    id: proposal
     attributes:
-      label: What would the ideal solution look like?
+      label: Proposed solution
+      placeholder: "What should Sortie do?"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Product area
+      options:
+        - iOS app
+        - Mac CLI
+        - Agent integration
+        - Pairing or account setup
+        - Notifications
+        - Security or privacy
+        - Documentation
+        - Other
+    validations:
+      required: true
   - type: textarea
     id: alternatives
     attributes:
-      label: Workarounds you tried
+      label: Alternatives considered
+      placeholder: "Any workaround or alternate design you already tried?"
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      placeholder: "Links, screenshots, agent names, or examples."

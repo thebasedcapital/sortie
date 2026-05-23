@@ -1,0 +1,131 @@
+<!-- ============================================ -->
+<!-- File: readme-hero.svg -->
+<!-- Purpose: Visual README hero for the public Sortie GitHub repo -->
+<!-- Components: Background, Copy, PhonePreview, TerminalPreview, AgentRail -->
+<!-- ============================================ -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">Sortie product preview</title>
+  <desc id="desc">A dark launch graphic showing Sortie as an iPhone control surface connected to a Mac terminal running AI agents.</desc>
+
+  <!-- === COMPONENT: Background === -->
+  <!-- Dependencies: none -->
+  <!-- Purpose: Launch-ready dark canvas with restrained grid and trajectory accent -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#12110f"/>
+      <stop offset="0.52" stop-color="#171510"/>
+      <stop offset="1" stop-color="#0b0d0d"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff9b54"/>
+      <stop offset="1" stop-color="#f0541b"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#292017"/>
+      <stop offset="0.38" stop-color="#171510"/>
+      <stop offset="1" stop-color="#10100e"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="28" stdDeviation="34" flood-color="#000000" flood-opacity="0.38"/>
+    </filter>
+    <pattern id="grid" width="54" height="54" patternUnits="userSpaceOnUse">
+      <path d="M 54 0 L 0 0 0 54" fill="none" stroke="#f4efe5" stroke-opacity="0.055" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="620" rx="30" fill="url(#bg)"/>
+  <rect width="1200" height="620" rx="30" fill="url(#grid)"/>
+  <path d="M86 520 C230 250 392 126 578 147 C720 164 806 82 932 64" fill="none" stroke="#ff7a30" stroke-width="4" stroke-linecap="round" stroke-opacity="0.48"/>
+  <circle cx="932" cy="64" r="9" fill="#ff7a30"/>
+  <!-- === END: Background === -->
+
+  <!-- === COMPONENT: Copy === -->
+  <!-- Dependencies: Background -->
+  <!-- Purpose: Brand, positioning, and beta status -->
+  <g transform="translate(76 78)">
+    <rect x="0" y="0" width="126" height="34" rx="17" fill="#f4efe5" fill-opacity="0.08" stroke="#f4efe5" stroke-opacity="0.14"/>
+    <circle cx="19" cy="17" r="5" fill="#a7d28d"/>
+    <text x="34" y="22" fill="#f4efe5" fill-opacity="0.82" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="700" letter-spacing="1.5">BETA OPEN</text>
+
+    <text x="0" y="112" fill="#f4efe5" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="76" font-weight="800" letter-spacing="0">Sortie</text>
+    <text x="0" y="168" fill="#ff7a30" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="42" font-weight="760" letter-spacing="0">AI agent mission control</text>
+    <text x="0" y="219" fill="#f4efe5" fill-opacity="0.72" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="24" font-weight="500">Command every agent from iPhone.</text>
+    <text x="0" y="254" fill="#f4efe5" fill-opacity="0.72" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="24" font-weight="500">Your Mac runs the work locally.</text>
+
+    <g transform="translate(0 316)">
+      <rect width="168" height="52" rx="8" fill="url(#orange)"/>
+      <text x="24" y="33" fill="#15120f" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="17" font-weight="800">TestFlight</text>
+      <rect x="182" width="210" height="52" rx="8" fill="#f4efe5" fill-opacity="0.075" stroke="#f4efe5" stroke-opacity="0.16"/>
+      <text x="204" y="33" fill="#f4efe5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15" font-weight="750">brew install sortie</text>
+    </g>
+  </g>
+  <!-- === END: Copy === -->
+
+  <!-- === COMPONENT: PhonePreview === -->
+  <!-- Dependencies: Background -->
+  <!-- Purpose: Show the iOS command surface instead of a generic text-only repo -->
+  <g transform="translate(666 66)" filter="url(#shadow)">
+    <rect x="0" y="0" width="286" height="500" rx="44" fill="#070707"/>
+    <rect x="11" y="11" width="264" height="478" rx="34" fill="url(#screen)"/>
+    <rect x="91" y="23" width="104" height="29" rx="15" fill="#050505"/>
+    <text x="32" y="92" fill="#f4efe5" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="28" font-weight="760">Missions</text>
+    <text x="32" y="119" fill="#a7d28d" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="800" letter-spacing="1.2">LINK LIVE - 142 MS</text>
+    <rect x="220" y="78" width="34" height="34" rx="8" fill="#ff7a30"/>
+    <text x="231" y="102" fill="#15120f" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="24" font-weight="900">+</text>
+
+    <g transform="translate(28 152)">
+      <rect width="230" height="60" rx="8" fill="#f4efe5" fill-opacity="0.075" stroke="#f4efe5" stroke-opacity="0.12"/>
+      <rect x="12" y="12" width="36" height="36" rx="8" fill="#85b8ff"/>
+      <text x="20" y="35" fill="#11110f" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="850">CX</text>
+      <text x="62" y="27" fill="#f4efe5" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="14" font-weight="760">Codex - launch site</text>
+      <text x="62" y="45" fill="#f4efe5" fill-opacity="0.52" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="12">editing README</text>
+    </g>
+    <g transform="translate(28 224)">
+      <rect width="230" height="60" rx="8" fill="#f4efe5" fill-opacity="0.075" stroke="#f4efe5" stroke-opacity="0.12"/>
+      <rect x="12" y="12" width="36" height="36" rx="8" fill="#ff7a30"/>
+      <text x="20" y="35" fill="#11110f" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="850">CL</text>
+      <text x="62" y="27" fill="#f4efe5" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="14" font-weight="760">Claude - onboarding</text>
+      <text x="62" y="45" fill="#f4efe5" fill-opacity="0.52" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="12">writing beta notes</text>
+    </g>
+    <g transform="translate(28 318)">
+      <text x="0" y="0" fill="#f4efe5" fill-opacity="0.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="800" letter-spacing="1.2">AGENT ROSTER</text>
+      <g transform="translate(0 18)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="850">
+        <rect x="0" y="0" width="38" height="38" rx="8" fill="#f4efe5" fill-opacity="0.12"/><text x="10" y="24" fill="#f4efe5">GM</text>
+        <rect x="48" y="0" width="38" height="38" rx="8" fill="#f4efe5" fill-opacity="0.12"/><text x="58" y="24" fill="#f4efe5">AM</text>
+        <rect x="96" y="0" width="38" height="38" rx="8" fill="#f4efe5" fill-opacity="0.12"/><text x="106" y="24" fill="#f4efe5">HM</text>
+        <rect x="144" y="0" width="38" height="38" rx="8" fill="#f4efe5" fill-opacity="0.12"/><text x="155" y="24" fill="#f4efe5">DR</text>
+        <rect x="192" y="0" width="38" height="38" rx="8" fill="#f4efe5" fill-opacity="0.12"/><text x="203" y="24" fill="#f4efe5">PI</text>
+      </g>
+    </g>
+  </g>
+  <!-- === END: PhonePreview === -->
+
+  <!-- === COMPONENT: TerminalPreview === -->
+  <!-- Dependencies: Background -->
+  <!-- Purpose: Clarify that the Mac is the compute surface -->
+  <g transform="translate(522 394)" filter="url(#shadow)">
+    <rect width="390" height="150" rx="10" fill="#090b0b" stroke="#f4efe5" stroke-opacity="0.16"/>
+    <rect width="390" height="38" rx="10" fill="#f4efe5" fill-opacity="0.055"/>
+    <circle cx="22" cy="19" r="5" fill="#ff7a30"/>
+    <circle cx="40" cy="19" r="5" fill="#f0c86a"/>
+    <circle cx="58" cy="19" r="5" fill="#a7d28d"/>
+    <text x="286" y="24" fill="#f4efe5" fill-opacity="0.45" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="800" letter-spacing="1.1">MAC DAEMON</text>
+    <text x="20" y="68" fill="#85b8ff" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14">$ sortie</text>
+    <text x="20" y="95" fill="#a7d28d" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14">pairing QR ready</text>
+    <text x="20" y="122" fill="#f4efe5" fill-opacity="0.7" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14">agents: claude codex gemini amp hermes droid</text>
+  </g>
+  <!-- === END: TerminalPreview === -->
+
+  <!-- === COMPONENT: AgentRail === -->
+  <!-- Dependencies: Background -->
+  <!-- Purpose: Lightweight signal of breadth without cluttering the README -->
+  <g transform="translate(76 548)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="800" letter-spacing="1.2">
+    <text x="0" y="0" fill="#f4efe5" fill-opacity="0.42">CLAUDE</text>
+    <text x="92" y="0" fill="#f4efe5" fill-opacity="0.42">CODEX</text>
+    <text x="176" y="0" fill="#f4efe5" fill-opacity="0.42">GEMINI</text>
+    <text x="272" y="0" fill="#f4efe5" fill-opacity="0.42">AMP</text>
+    <text x="334" y="0" fill="#f4efe5" fill-opacity="0.42">HERMES</text>
+    <text x="430" y="0" fill="#f4efe5" fill-opacity="0.42">DROID</text>
+    <text x="512" y="0" fill="#f4efe5" fill-opacity="0.42">SOULFORGE</text>
+  </g>
+  <!-- === END: AgentRail === -->
+</svg>

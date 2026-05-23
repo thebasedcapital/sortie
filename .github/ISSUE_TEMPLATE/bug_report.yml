@@ -1,42 +1,79 @@
 name: Bug report
-description: Something is broken or doesn't work like the docs say.
-title: "[Bug] "
-labels: ["bug"]
+description: Report something broken in the Sortie beta.
+title: "[Bug]: "
+labels: ["bug", "beta"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for testing Sortie. The most useful reports separate install, pairing, message delivery, and agent runtime behavior.
   - type: textarea
-    id: what-happened
+    id: summary
     attributes:
       label: What happened?
-      description: What did you do, what did you expect, what actually happened?
-      placeholder: |
-        I ran `sortie` and instead of a QR code I got...
+      description: One or two sentences describing the bug.
+      placeholder: "Example: The iPhone app linked successfully, but new Codex sessions never appeared."
     validations:
       required: true
-  - type: input
-    id: sortie-version
+  - type: textarea
+    id: steps
     attributes:
-      label: Sortie CLI version
-      description: Output of `sortie --version`
-      placeholder: "0.14.0"
-  - type: input
-    id: ios-version
+      label: Steps to reproduce
+      description: List the exact actions that triggered the issue.
+      placeholder: |
+        1. Run `sortie`
+        2. Scan the QR code
+        3. Start a Codex session
+        4. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
     attributes:
-      label: iOS version
-      placeholder: "iOS 17.5"
-  - type: input
-    id: macos-version
-    attributes:
-      label: macOS version
-      placeholder: "macOS 15.0"
+      label: Expected behavior
+      placeholder: "What should Sortie have done instead?"
+    validations:
+      required: true
   - type: textarea
     id: doctor
     attributes:
       label: sortie doctor output
-      description: Paste the output of `sortie doctor` (redact anything sensitive)
+      description: Run `sortie doctor` and paste the output here. Remove secrets or tokens if any appear.
       render: shell
-  - type: textarea
-    id: logs
+    validations:
+      required: true
+  - type: dropdown
+    id: area
     attributes:
-      label: Logs
-      description: Any terminal output, error messages, or stack traces
-      render: shell
+      label: Where did it happen?
+      options:
+        - Install or update
+        - QR pairing
+        - iOS app
+        - Mac CLI or daemon
+        - Agent session startup
+        - Message delivery
+        - Permissions
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: ios
+    attributes:
+      label: iOS version
+      placeholder: "Example: iOS 18.5"
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version
+      placeholder: "Example: macOS 15.5"
+  - type: input
+    id: agent
+    attributes:
+      label: Agent CLI involved
+      placeholder: "Example: claude, codex, gemini, amp"
+  - type: textarea
+    id: media
+    attributes:
+      label: Screenshots or logs
+      description: Drag in screenshots, screen recordings, or relevant logs.

@@ -1,0 +1,31 @@
+name: Question
+description: Ask about install, pairing, agents, or beta behavior.
+title: "[Question]: "
+labels: ["question", "beta"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      placeholder: "What are you trying to understand or unblock?"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Install
+        - Pairing
+        - iOS app
+        - Mac CLI
+        - Agent support
+        - Privacy or security
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      placeholder: "What have you tried so far?"
