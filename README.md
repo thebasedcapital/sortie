@@ -71,12 +71,17 @@ Settings -> Account -> Link New Device
 ## Architecture
 
 ```text
-iPhone Sortie app      < encrypted relay >      Mac sortie daemon
-command surface          libsodium keys         local agent runtime
-                                                    |
-                                                    v
-                                      claude / codex / gemini / amp
-                                      hermes / droid / pi / claw / ...
+┌──────────────────────┐      end-to-end encrypted      ┌──────────────────────┐
+│  iPhone Sortie app   │  ◄──────────────────────────►  │  Mac sortie daemon   │
+│  command surface     │        libsodium relay         │  local agent runtime │
+└──────────────────────┘                                └──────────┬───────────┘
+                                                                    │
+                                                                    ▼
+                                                     ┌─────────────────────────┐
+                                                     │ claude / codex / gemini │
+                                                     │ amp / hermes / droid    │
+                                                     │ pi / claw / ...         │
+                                                     └─────────────────────────┘
 ```
 
 The relay handles auth and routing. Message content stays end-to-end encrypted; keys live on your devices.
